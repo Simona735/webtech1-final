@@ -2,6 +2,11 @@
     background: #750310;
 }
 
+#homeIcon{
+    width: 20px;
+    height: 20px;
+}
+
 .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
 }

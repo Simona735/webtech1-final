@@ -4,7 +4,7 @@ template.innerHTML = `
                 <div class="card">
                     <article class="card-group-item">
                         <header class="card-header">
-                            <h6 class="title">Widget 1</h6>
+                            <h6 class="title">Počítadlo prístupov</h6>
                         </header>
                         <div class="filter-content">
                             <div class="card-body">

@@ -3,6 +3,15 @@ body{
     min-height: 100vh;
 }
 
+.breadcrumbs{
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem 1rem;
+    list-style: none;
+    background-color: #f1e0e0;
+    border-radius: .25rem;
+}
+
 .bg-1 {
     padding: 20px 0;
     background-color: #365b24;
@@ -36,9 +45,16 @@ body{
     border: 8px solid #2D4D1E;
 }
 
+.link:visited{
+    color: #365b24;
+}
+.link:hover{
+    color: #17280F;
+}
+
 footer{
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 8px 0;
-}*
+}

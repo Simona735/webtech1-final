@@ -1,5 +1,5 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const navbarTemplate = document.createElement('template');
+navbarTemplate.innerHTML = `
         <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
             <a href="/~xrichterova/Zfinal/index.html" class="navbar-brand d-flex align-items-center">
                 <img src="/~xrichterova/Zfinal/resources/img/snowflake.svg" id="homeIcon" alt="Home icon">
@@ -87,7 +87,7 @@ class NavbarMenu extends HTMLElement {
         super();
 
         this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.appendChild(navbarTemplate.content.cloneNode(true));
     }
 
     connectedCallback() {

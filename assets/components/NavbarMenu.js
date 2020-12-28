@@ -2,7 +2,7 @@ const navbarTemplate = document.createElement('template');
 navbarTemplate.innerHTML = `
         <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
             <a href="/~xrichterova/Zfinal/index.html" class="navbar-brand d-flex align-items-center">
-                <img src="/~xrichterova/Zfinal/resources/img/snowflake.svg" id="homeIcon" alt="Home icon">
+                <img src="/~xrichterova/Zfinal/assets/img/snowflake.svg" id="homeIcon" alt="Home icon">
                 <strong class="ml-2">Domov</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">

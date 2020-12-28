@@ -36,44 +36,7 @@ class NamesdayWidget extends HTMLElement {
     }
 
     connectedCallback() {
-        var numberInput = this.shadowRoot.querySelector('#numberInput');
-        var sliderInput = this.shadowRoot.querySelector('#sliderInput');
 
-        var sliderBox = this.shadowRoot.querySelector('#sliderBox');
-        var numberBox = this.shadowRoot.querySelector('#numberBox');
-
-        var rangeV = this.shadowRoot.querySelector('#sliderV');
-
-        amplitudeValues( numberBox, numberInput );
-        amplitudeValues( sliderBox, sliderInput );
-
-        function amplitudeValues( box, input ){
-            input.max = 20;
-            input.min = -20;
-            input.defaultValue=1;
-        }
-
-        sliderBox.addEventListener("click", () => {
-            if(sliderBox.checked){
-                sliderInput.style.display = "block";
-                rangeV.style.display = "block";
-            } else{
-                sliderInput.style.display = "none";
-                rangeV.style.display = "none";
-            }
-        });
-
-        const
-            setValue = ()=>{
-                const
-                    newValue = Number( (sliderInput.value - sliderInput.min) * 100 / (sliderInput.max - sliderInput.min) ),
-                    newPosition = 15 - (newValue *0.7);
-                rangeV.innerHTML = `<span>${sliderInput.value}</span>`;
-                rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
-            };
-        this.shadowRoot.addEventListener("DOMContentLoaded", setValue);
-        sliderInput.addEventListener('input', setValue);
-        numberInput.addEventListener('input', setValue);
     }
 }
 window.customElements.define("namesday-widget", NamesdayWidget);

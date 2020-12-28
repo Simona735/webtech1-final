@@ -70,7 +70,7 @@ navbarTemplate.innerHTML = `
             .dropdown-submenu>.dropdown-menu {
                 top: 0;
                 left: 100%;
-                margin-top: -6px;
+                /*margin-top: -6px;*/
             }
             
             /* rotate caret on hover */

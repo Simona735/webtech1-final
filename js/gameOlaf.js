@@ -2,7 +2,7 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 
 function loadImages(sources, callback) {
-    var assetDir = '/~xrichterova/Zfinal/assets/mikulas/';
+    var assetDir = '/~xrichterova/Zfinal/assets/olaf/';
     var images = {};
     var loadedImages = 0;
     var numImages = 0;
@@ -51,7 +51,7 @@ function initStage(images) {
     var partsShapes = [];
     var score = 0;
 
-    // image positions
+    // image positions  //TODO: kde budu obrazky rozmiestnene, startovacia pozicia
     var parts = {
         ciapka: {
             x: 380,
@@ -91,6 +91,7 @@ function initStage(images) {
         },
     };
 
+    //TODO: sem obrazky ktore su -black, ta predloha kam sa to bude ukladat
     var outlines = {
         ciapka_black: {
             x: 60,
@@ -162,7 +163,7 @@ function initStage(images) {
                     partsLayer.draw();
                     part.inRightPlace = true;
 
-                    if (++score >= 9) {
+                    if (++score >= 9) {  //TODO: pocet kuskov
                         var text = 'You win! You win!';
                         drawBackground(background, images.pozadie, text);
                     }
@@ -220,7 +221,8 @@ function initStage(images) {
 }
 
 var sources = {
-    pozadie: 'white.png',
+    // TODO: premenovat
+    pozadie: 'white.png', //nazov pozadie zostane
     ciapka: 'ciapka.png',
     ciapka_black: 'ciapka-black.png',
     kabat: 'kabat.png',

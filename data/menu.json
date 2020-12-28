@@ -34,7 +34,7 @@
         "text":"O nás",
         "children":[
           {
-            "href":"/subpages/about/rendek.html",
+            "href":"../../subpages/about/rendek.html",
             "text":"Rendek Michal"
           },
           {

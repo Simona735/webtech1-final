@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
         <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
             <a href="#" class="navbar-brand d-flex align-items-center">
-                <img src="../../resources/img/home.png" id="homeIcon" alt="Home icon">
+                <img src="/~xrichterova/Zfinal/resources/img/home.png" id="homeIcon" alt="Home icon">
                 <strong class="ml-2">Domov</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,37 +17,33 @@ template.innerHTML = `
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuGames" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hry </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuGames">
-                            <li><a class="dropdown-item" href="#">Anjel</a></li>
-                            <li><a class="dropdown-item" href="#">Tučniak</a></li>
-                            <li><a class="dropdown-item" href="#">Mikuláš</a></li>
-                            <li><a class="dropdown-item" href="#">Snehuliak Olaf</a></li>
+                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/anjel.html">Anjel</a></li>
+                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/tucniak.html">Tučniak</a></li>
+                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/mikulas.html">Mikuláš</a></li>
+                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/olaf.html">Snehuliak Olaf</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Info </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="../../subpages/sources.html">Zdroje</a></li>
+                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/sources.html">Zdroje</a></li>
                             <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">O nás</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="../../subpages/about/rendek.html">Rendek Michal</a></li>
-                                    <li><a class="dropdown-item" href="../../subpages/about/richterova.html">Richterová Simona</a></li>
-                                    <li><a class="dropdown-item" href="../../subpages/about/ulrichova.html">Ulrichová Barbora</a></li>
-                                    <li><a class="dropdown-item" href="../../subpages/about/vcelkova.html">Včelková Edita</a></li>
+                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/about/rendek.html">Rendek Michal</a></li>
+                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/about/richterova.html">Richterová Simona</a></li>
+                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/about/ulrichova.html">Ulrichová Barbora</a></li>
+                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal//subpages/about/vcelkova.html">Včelková Edita</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../subpages/tasks.html">Zoznam úloh</a>
+                        <a class="nav-link" href="/~xrichterova/Zfinal/subpages/tasks.html">Zoznam úloh</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../subpages/redistribution.html">Rozdelenie úloh</a>
+                        <a class="nav-link" href="/~xrichterova/Zfinal/subpages/redistribution.html">Rozdelenie úloh</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
         </nav>
         <style>
@@ -95,6 +91,7 @@ class NavbarMenu extends HTMLElement {
     }
 
     connectedCallback() {
+
     }
 }
 window.customElements.define("navbar-menu", NavbarMenu);

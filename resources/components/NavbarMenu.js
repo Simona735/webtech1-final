@@ -1,8 +1,8 @@
 const template = document.createElement('template');
 template.innerHTML = `
         <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <img src="/~xrichterova/Zfinal/resources/img/home.png" id="homeIcon" alt="Home icon">
+            <a href="/~xrichterova/Zfinal/index.html" class="navbar-brand d-flex align-items-center">
+                <img src="/~xrichterova/Zfinal/resources/img/snowflake.svg" id="homeIcon" alt="Home icon">
                 <strong class="ml-2">Domov</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,8 +52,8 @@ template.innerHTML = `
             }
             
             #homeIcon{
-                width: 20px;
-                height: 20px;
+                width: 25px;
+                height: 25px;
             }
             
             .navbar-nav li:hover > ul.dropdown-menu {

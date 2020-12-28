@@ -1,33 +1,14 @@
-
-#navbar{
-    background: #750310;
+.bg-1 {
+    padding: 20px 0;
+    background-color: #365b24;; /* Green */
+    color: #ffffff;
 }
 
-#homeIcon{
-    width: 20px;
-    height: 20px;
-}
-
-.navbar-nav li:hover > ul.dropdown-menu {
+.img-circle{
+    margin: 0 auto;
     display: block;
-}
-.dropdown-submenu {
-    position:relative;
-}
-
-.dropdown-menu {
-    margin: 0; !important;
-}
-
-.dropdown-submenu>.dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-}
-/* rotate caret on hover */
-.dropdown-menu > li > a:hover:after {
-    text-decoration: underline;
-    transform: rotate(-90deg);
+    width: 200px;
+    border: 8px solid #2D4D1E;
 }
 
 footer{

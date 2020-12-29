@@ -15,7 +15,7 @@ navbarTemplate.innerHTML = `
                         <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuGames" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hry </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuGames" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hry </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuGames">
                             <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/anjel.html">Anjel</a></li>
                             <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/tucniak.html">Tučniak</a></li>
@@ -24,7 +24,7 @@ navbarTemplate.innerHTML = `
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Info </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Info </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/sources.html">Zdroje</a></li>
                             <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">O nás</a>

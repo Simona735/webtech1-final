@@ -12,66 +12,219 @@
 <body>
 
 <navbar-menu></navbar-menu>
-
+<nav>
+    <ol class="breadcrumbs">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+</nav>
 <main role="main">
-    <div class="container-fluid">
-        <!-- Example row of columns -->
-        <div class="row">
-            <aside class="col-md-2 mt-3">
-                <div class="card">
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Widget 1</h6>
-                        </header>
-                        <div class="filter-content">
-                            <div class="card-body">
-                                <div class="custom-control custom-checkbox">
-                                    <span class="float-right badge badge-light round">52</span>
-                                    <input type="checkbox" class="custom-control-input" id="Check1">
-                                    <label class="custom-control-label" for="Check1">Samsung</label>
-                                </div> <!-- form-check.// -->
+    <h1 class="text-center">Check List</h1>
+    <div class="container-fluid bg-6 ">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 mt-1 mb-5">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th class="task-cell">Úloha</th>
+                        <th>Stav</th>
+                        <th>Zhotovil</th>
+                    </tr>
+                    <tr>
+                        <td class="task-1">1.</td>
+                        <td class="font-weight-bold">Grafický dizajn</td>
+                        <td>&check;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">1.1</td>
+                        <td>Návrh grafického dizajnu</td>
+                        <td>&check;</td>
+                        <td>Barbora Ulrichová</td>
 
-                                <div class="custom-control custom-checkbox">
-                                    <span class="float-right badge badge-light round">132</span>
-                                    <input type="checkbox" class="custom-control-input" id="Check2">
-                                    <label class="custom-control-label" for="Check2">Black berry</label>
-                                </div> <!-- form-check.// -->
-                            </div> <!-- card-body.// -->
-                        </div>
-                    </article> <!-- card-group-item.// -->
-                </div> <!-- card.// -->
-            </aside>
-            <div class="col-md-8 mt-3">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </tr>
+                    <tr>
+                        <td class="task-2">1.2</td>
+                        <td>Responzívny dizajn</td>
+                        <td>&#x2717;</td>
+                        <td>Edita Včelková</td>
+
+                    </tr>
+                    <tr>
+                        <td class="task-2">1.3</td>
+                        <td>Prispôsobenie stránky pre tlač pomocou CSS</td>
+                        <td>&#x2717;</td>
+                        <td>Michal Rendek</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">2.</td>
+                        <td class="font-weight-bold">Trojúrovňové menu</td>
+                        <td>&#x2717;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="task-2" >2.1</td>
+                        <td>Trojúrovňové menu.
+                        </td>
+                        <td>&check;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2" >2.2</td>
+                        <td>Trojúrovňové menu bude dynamicky generované na základe údajov, ktoré budú vložené v
+                            poli.
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">3.</td>
+                        <td class="font-weight-bold">Meninový widget</td>
+                        <td>&#x2717;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">3.1</td>
+                        <td>Súčasťou bude obojsmerné zisťovanie priradenia dátumu a mena, t.j. po zadaní dátumu sa vypíše, kto má v daný deň meniny a po zadaní
+                            mena sa vypíše, kedy má takáto osoba meniny.
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2"> 3.2</td>
+                        <td>Pri zadávaní dátumu je potrebné zisťovať aj to, či je
+                            dátum zmysluplný.
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">3.3</td>
+                        <td>Pri zlom zadaní dátumu sa nápoveda správnej syntaxe realizuje pomocou tooltipu.</td>
+                        <td>&#x2717;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">3.4</td>
+                        <td>Predpokladá sa, ze dátum sa bude dať zadať v tvare 31.3., t.j. nielen v tvare 31.03.
+                            Zoznam mien bude dodaný vo vhodnom formáte.
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Barbora Ulrichová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">3.5</td>
+                        <td>Pri zadávaní mena do formuláru sa bude dať vyhľadať aj meno bez diakritiky, pričom na veľkosti písmen nebude záležať. Predpokladá sa, ze dátum sa bude dať zadať v tvare 31.3., t.j. nielen v tvare 31.03.
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Barbora Ulrichová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1" >4.</td>
+                        <td>Zobrazenie počítadla osobných prístupov na stránku.</td>
+                        <td>&#x2717;</td>
+                        <td>Edita Včelková</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">5.</td>
+                        <td>Trojúrovňové menu, zisťovanie menín a počítadlo osobných prístupov budú realizované pomocou
+                            vami vytvoreného web komponentu.</td>
+                        <td>&check;</td>
+                        <td>Simona Richterová, Edita Včelková</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">6.</td>
+                        <td>Zobrazenie histórie prehliadania vo forme path-based breadcrumbs (5 posledných podstránok).</td>
+                        <td>&#x2717;</td>
+                        <td>Michal Rendek</td>
+                    </tr>
+
+                    <tr>
+                        <td class="task-1">7.</td>
+                        <td class="font-weight-bold">Vypracovanie individuálnej úlohy každým členom tímu.</td>
+                        <td>&check;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">7.1</td>
+                        <td>Olaf
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Edita Včelková</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">7.2</td>
+                        <td>Mikuláš
+                        </td>
+                        <td>&check;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">7.3</td>
+                        <td>Anjel
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Michal Rendek</td>
+                    </tr>
+                    <tr>
+                        <td class="task-2">7.4</td>
+                        <td>Tučniak
+                        </td>
+                        <td>&#x2717;</td>
+                        <td>Barbora Ulrichová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">8</td>
+                        <td>Hra musí byť "ukončiteľná", t.j. po poskladaní sa zobrazí oznam, že hra skončila</td>
+                        <td>&#x2717;</td>
+                        <td>Barbora Ulrichová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">9</td>
+                        <td>Demo zostavenia úlohy</td>
+                        <td>&#x2717;</td>
+                        <td>Michal Rendek</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">10</td>
+                        <td>Časovač hry</td>
+                        <td>&#x2717;</td>
+                        <td>Edita Včelková</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">11</td>
+                        <td>Identifikácia kto hru vytvoril</td>
+                        <td>&#x2717;</td>
+                        <td>Simona Richterová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">12</td>
+                        <td>Riešenie týchto úloh bude graficky zapracované do vytvorenej web stránky.
+                        </td>
+                        <td>&check;</td>
+                        <td>Barbora Ulrichová</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">13</td>
+                        <td>Check list/ Zoznam úloh
+                        </td>
+                        <td>&check;</td>
+                        <td>Edita Včelková</td>
+                    </tr>
+                    <tr>
+                        <td class="task-1">14</td>
+                        <td>Kontakt na všetkých autorov s fotkami.
+                        </td>
+                        <td>&check;</td>
+                        <td>Barbora Ulrichová</td>
+                    </tr>
+
+                </table>
             </div>
-            <aside class="col-md-2 mt-3">
-                <div class="card">
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Widget 2 </h6>
-                        </header>
-                        <div class="filter-content">
-                            <div class="card-body">
-                                <div class="custom-control custom-checkbox">
-                                    <span class="float-right badge badge-light round">52</span>
-                                    <input type="checkbox" class="custom-control-input" id="Check3">
-                                    <label class="custom-control-label" for="Check1">Samsung</label>
-                                </div> <!-- form-check.// -->
-
-                                <div class="custom-control custom-checkbox">
-                                    <span class="float-right badge badge-light round">132</span>
-                                    <input type="checkbox" class="custom-control-input" id="Check4">
-                                    <label class="custom-control-label" for="Check2">Black berry</label>
-                                </div> <!-- form-check.// -->
-                            </div> <!-- card-body.// -->
-                        </div>
-                    </article> <!-- card-group-item.// -->
-                </div> <!-- card.// -->
-            </aside>
         </div>
-    </div> <!-- /container -->
+    </div>
 </main>
 
 

@@ -8,8 +8,9 @@ body{
     flex-wrap: wrap;
     padding: .2rem 1rem;
     list-style: none;
-    background-color: #f1e0e0;
+    background-color: #e9dddd;
     border-radius: .25rem;
+    margin: 0;
 }
 
 .bg-1 {
@@ -67,6 +68,11 @@ body{
     color: #17280F;
 }
 
+#snowflake{
+    width: 20px;
+    height: 20px;
+}
+
 table, td {
     color: #ffffff;
     border: 2px solid #cababa;
@@ -86,6 +92,23 @@ th{
 
 .task-cell{
     width: 75%;
+}
+.game-preview{
+    max-height: 200px;
+    margin: 0 20px 20px 20px;
+}
+
+div .green-background, .btn-green{
+    background-color: #365B24;
+    color: white;
+}
+.btn-green:hover{
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card{
+    margin: 10px 20px;
 }
 
 footer{

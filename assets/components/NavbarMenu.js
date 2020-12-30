@@ -65,7 +65,7 @@ class NavbarMenu extends HTMLElement {
         fetch('/~xrichterova/Zfinal/data/menu.json')
             .then(response => response.json())
             .then(json => {
-                json.menuItems.forEach((item) => {
+                json.forEach((item) => {
                     //1-level submenu
                     let menuItem = document.createElement("li");
                     menuItem.classList.add("nav-item");

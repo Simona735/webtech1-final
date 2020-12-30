@@ -51,83 +51,81 @@ function initStage(images) {
     var partsShapes = [];
     var score = 0;
 
-    // image positions  //TODO: kde budu obrazky rozmiestnene, startovacia pozicia
     var parts = {
-        ciapka: {
+        brusko: {
             x: 380,
             y: 140,
         },
-        kabat: {
-            x: 305,
+        ciapka: {
+            x: 300,
             y: 20,
         },
         l_noha: {
-            x: 470,
-            y: 10,
+            x: 350,
+            y: 200,
         },
         l_ruka: {
             x: 340,
             y: 180,
         },
-        l_topanka: {
+        p_ruka: {
             x: 360,
             y: 310,
         },
         p_noha: {
-            x: 300,
+            x: 400,
             y: 20,
         },
-        p_ruka: {
-            x: 500,
-            y: 250,
+        sal: {
+            x: 325,
+            y: 100,
         },
-        p_topanka: {
+        tvar: {
+            x: 330,
+            y: 200,
+        },
+        zobak: {
             x: 385,
             y: 70,
         },
-        tvar: {
-            x: 360,
-            y: 280,
-        },
     };
 
-    //TODO: sem obrazky ktore su -black, ta predloha kam sa to bude ukladat
     var outlines = {
-        ciapka_black: {
-            x: 60,
-            y: 19,
+        brusko_black: {
+            x: 69,
+            y: 288,
         },
-        kabat_black: {
-            x: 42,
-            y: 36,
+        ciapka_black: {
+            x: 63,
+            y: 6,
         },
         l_noha_black: {
-            x: 79,
-            y: 322,
+            x: 49,
+            y: 353,
         },
         l_ruka_black: {
-            x: 0,
-            y: 171,
-        },
-        l_topanka_black: {
-            x: 56,
-            y: 377,
-        },
-        p_noha_black: {
-            x: 215,
-            y: 315,
+            x: 10,
+            y: 265,
         },
         p_ruka_black: {
-            x: 216,
-            y: 0,
+            x: 238,
+            y: 277,
         },
-        p_topanka_black: {
-            x: 221,
-            y: 388,
+        p_noha_black: {
+            x: 194,
+            y: 352,
+        },
+        sal_black: {
+            x: 81,
+            y: 251,
         },
         tvar_black: {
-            x: 100,
-            y: 61,
+            x: 46,
+            y: 117,
+        },
+        zobak_black: {
+            x: 139,
+            y: 210,
         },
     };
 
@@ -221,25 +219,24 @@ function initStage(images) {
 }
 
 var sources = {
-    // TODO: premenovat
     pozadie: 'white.png', //nazov pozadie zostane
+    brusko: 'brusko.png',
+    brusko_black: 'brusko_black.png',
     ciapka: 'ciapka.png',
-    ciapka_black: 'ciapka-black.png',
-    kabat: 'kabat.png',
-    kabat_black: 'kabat-black.png',
+    ciapka_black: 'ciapka_black.png',
     l_noha: 'l_noha.png',
-    l_noha_black: 'l_noha-black.png',
+    l_noha_black: 'l_noha_black.png',
     l_ruka: 'l_ruka.png',
-    l_ruka_black: 'l_ruka-black.png',
-    l_topanka: 'l_topanka.png',
-    l_topanka_black: 'l_topanka-black.png',
-    p_noha: 'p_noha.png',
-    p_noha_black: 'p_noha-black.png',
+    l_ruka_black: 'l_ruka_black.png',
     p_ruka: 'p_ruka.png',
-    p_ruka_black: 'p_ruka-black.png',
-    p_topanka: 'p_topanka.png',
-    p_topanka_black: 'p_topanka-black.png',
+    p_ruka_black: 'p_ruka_black.png',
+    p_noha: 'p_noha.png',
+    p_noha_black: 'p_noha_black.png',
+    sal: 'sal.png',
+    sal_black: 'sal_black.png',
     tvar: 'tvar.png',
-    tvar_black: 'tvar-black.png',
+    tvar_black: 'tvar_black.png',
+    zobak: 'zobak.png',
+    zobak_black: 'zobak_black.png',
 };
 loadImages(sources, initStage);

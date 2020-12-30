@@ -51,83 +51,74 @@ function initStage(images) {
     var partsShapes = [];
     var score = 0;
 
-    // image positions  //TODO: kde budu obrazky rozmiestnene, startovacia pozicia
+    // image positions
     var parts = {
-        ciapka: {
+        gombik_1: {
             x: 380,
             y: 140,
         },
-        kabat: {
-            x: 305,
+        gombik_2: {
+            x: 400,
             y: 20,
         },
-        l_noha: {
-            x: 470,
-            y: 10,
+        gombik_3: {
+            x: 350,
+            y: 200,
         },
         l_ruka: {
             x: 340,
             y: 180,
         },
-        l_topanka: {
+        p_ruka: {
             x: 360,
             y: 310,
         },
-        p_noha: {
-            x: 300,
+        tvar: {
+            x: 400,
             y: 20,
         },
-        p_ruka: {
-            x: 500,
-            y: 250,
+        usta: {
+            x: 325,
+            y: 100,
         },
-        p_topanka: {
+        vlasy: {
             x: 385,
             y: 70,
         },
-        tvar: {
-            x: 360,
-            y: 280,
-        },
     };
 
-    //TODO: sem obrazky ktore su -black, ta predloha kam sa to bude ukladat
     var outlines = {
-        ciapka_black: {
-            x: 60,
-            y: 19,
+        gombik_1_black: {
+            x: 115,
+            y: 252,
         },
-        kabat_black: {
-            x: 42,
-            y: 36,
+        gombik_2_black: {
+            x: 136,
+            y: 311,
         },
-        l_noha_black: {
-            x: 79,
-            y: 322,
+        gombik_3_black: {
+            x: 178,
+            y: 331,
         },
         l_ruka_black: {
-            x: 0,
-            y: 171,
-        },
-        l_topanka_black: {
-            x: 56,
-            y: 377,
-        },
-        p_noha_black: {
-            x: 215,
-            y: 315,
+            x: 4,
+            y: 142,
         },
         p_ruka_black: {
-            x: 216,
-            y: 0,
-        },
-        p_topanka_black: {
-            x: 221,
-            y: 388,
+            x: 161,
+            y: 172,
         },
         tvar_black: {
-            x: 100,
-            y: 61,
+            x: 147,
+            y: 72,
+        },
+        usta_black: {
+            x: 115,
+            y: 112,
+        },
+        vlasy_black: {
+            x: 175,
+            y: 5,
         },
     };
 
@@ -163,7 +154,7 @@ function initStage(images) {
                     partsLayer.draw();
                     part.inRightPlace = true;
 
-                    if (++score >= 9) {  //TODO: pocet kuskov
+                    if (++score >= 8) {
                         var text = 'You win! You win!';
                         drawBackground(background, images.pozadie, text);
                     }
@@ -221,25 +212,22 @@ function initStage(images) {
 }
 
 var sources = {
-    // TODO: premenovat
-    pozadie: 'white.png', //nazov pozadie zostane
-    ciapka: 'ciapka.png',
-    ciapka_black: 'ciapka-black.png',
-    kabat: 'kabat.png',
-    kabat_black: 'kabat-black.png',
-    l_noha: 'l_noha.png',
-    l_noha_black: 'l_noha-black.png',
+    pozadie: 'white.png',
+    gombik_1: '1_gombik.png',
+    gombik_1_black: '1_gombik_black.png',
+    gombik_2: '2_gombik.png',
+    gombik_2_black: '2_gombik_black.png',
+    gombik_3: '3_gombik.png',
+    gombik_3_black: '3_gombik_black.png',
     l_ruka: 'l_ruka.png',
-    l_ruka_black: 'l_ruka-black.png',
-    l_topanka: 'l_topanka.png',
-    l_topanka_black: 'l_topanka-black.png',
-    p_noha: 'p_noha.png',
-    p_noha_black: 'p_noha-black.png',
+    l_ruka_black: 'l_ruka_black.png',
     p_ruka: 'p_ruka.png',
-    p_ruka_black: 'p_ruka-black.png',
-    p_topanka: 'p_topanka.png',
-    p_topanka_black: 'p_topanka-black.png',
+    p_ruka_black: 'p_ruka_black.png',
     tvar: 'tvar.png',
-    tvar_black: 'tvar-black.png',
+    tvar_black: 'tvar_black.png',
+    usta: 'usta.png',
+    usta_black: 'usta_black.png',
+    vlasy: 'vlasy.png',
+    vlasy_black: 'vlasy_black.png',
 };
 loadImages(sources, initStage);

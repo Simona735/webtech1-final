@@ -51,83 +51,90 @@ function initStage(images) {
     var partsShapes = [];
     var score = 0;
 
-    // image positions  //TODO: kde budu obrazky rozmiestnene, startovacia pozicia
+    // image positions
     var parts = {
-        ciapka: {
+        hviezdaL: {
             x: 380,
             y: 140,
         },
-        kabat: {
-            x: 305,
+        hviezdaPD: {
+            x: 400,
             y: 20,
         },
-        l_noha: {
-            x: 470,
-            y: 10,
+        kridlo: {
+            x: 350,
+            y: 200,
         },
-        l_ruka: {
+        l_noha: {
             x: 340,
             y: 180,
         },
-        l_topanka: {
+        p_noha: {
             x: 360,
             y: 310,
         },
-        p_noha: {
-            x: 300,
+        ruka: {
+            x: 400,
             y: 20,
         },
-        p_ruka: {
-            x: 500,
-            y: 250,
+        saty: {
+            x: 325,
+            y: 100,
         },
-        p_topanka: {
+        tvar: {
             x: 385,
             y: 70,
         },
-        tvar: {
+        vlasy: {
             x: 360,
             y: 280,
         },
+        hviezdaPH: {
+            x: 350,
+            y: 2,
+        },
     };
 
-    //TODO: sem obrazky ktore su ..._black, ta predloha kam sa to bude ukladat
     var outlines = {
-        ciapka_black: {
-            x: 60,
+        hviezdaL_black: {
+            x: 36,
+            y: 154,
+        },
+        hviezdaPD_black: {
+            x: 253,
+            y: 325,
+        },
+        kridlo_black: {
+            x: 18,
             y: 19,
         },
-        kabat_black: {
-            x: 42,
-            y: 36,
-        },
         l_noha_black: {
-            x: 79,
-            y: 322,
-        },
-        l_ruka_black: {
-            x: 0,
-            y: 171,
-        },
-        l_topanka_black: {
-            x: 56,
-            y: 377,
+            x: 17,
+            y: 281,
         },
         p_noha_black: {
-            x: 215,
-            y: 315,
+            x: 52,
+            y: 344,
         },
-        p_ruka_black: {
-            x: 216,
-            y: 0,
+        ruka_black: {
+            x: 302,
+            y: 136,
         },
-        p_topanka_black: {
-            x: 221,
-            y: 388,
+        saty_black: {
+            x: 30,
+            y: 117,
         },
         tvar_black: {
-            x: 100,
-            y: 61,
+            x: 187,
+            y: 38,
+        },
+        vlasy_black: {
+            x: 127,
+            y: 2,
+        },
+        hviezdaPH_black: {
+            x: 263,
+            y: 67,
         },
     };
 
@@ -163,7 +170,7 @@ function initStage(images) {
                     partsLayer.draw();
                     part.inRightPlace = true;
 
-                    if (++score >= 9) {  //TODO: pocet kuskov
+                    if (++score >= 9) {
                         var text = 'You win! You win!';
                         drawBackground(background, images.pozadie, text);
                     }
@@ -221,25 +228,26 @@ function initStage(images) {
 }
 
 var sources = {
-    // TODO: premenovat
-    pozadie: 'white.png', //nazov pozadie zostane
-    ciapka: 'ciapka.png',
-    ciapka_black: 'ciapka-black.png',
-    kabat: 'kabat.png',
-    kabat_black: 'kabat-black.png',
-    l_noha: 'l_noha.png',
-    l_noha_black: 'l_noha-black.png',
-    l_ruka: 'l_ruka.png',
-    l_ruka_black: 'l_ruka-black.png',
-    l_topanka: 'l_topanka.png',
-    l_topanka_black: 'l_topanka-black.png',
-    p_noha: 'p_noha.png',
-    p_noha_black: 'p_noha-black.png',
-    p_ruka: 'p_ruka.png',
-    p_ruka_black: 'p_ruka-black.png',
-    p_topanka: 'p_topanka.png',
-    p_topanka_black: 'p_topanka-black.png',
+    pozadie: 'white.png',
+    vlasy: 'vlasy.png',
+    vlasy_black: 'vlasy_black.png',
     tvar: 'tvar.png',
-    tvar_black: 'tvar-black.png',
+    tvar_black: 'tvar_black.png',
+    saty: 'saty.png',
+    saty_black: 'saty_black.png',
+    ruka: 'ruka.png',
+    ruka_black: 'ruka_black.png',
+    p_noha: 'p_noha.png',
+    p_noha_black: 'p_noha_black.png',
+    l_noha: 'l_noha.png',
+    l_noha_black: 'l_noha_black.png',
+    kridlo: 'kridlo.png',
+    kridlo_black: 'kridlo_black.png',
+    hviezdaPD: 'hviezdaPD.png',
+    hviezdaPD_black: 'hviezdaPD_black.png',
+    hviezdaL: 'hviezdaL.png',
+    hviezdaL_black: 'hviezdaL_black.png',
+    hviezdaPH: 'hviezdaPH.png',
+    hviezdaPH_black: 'hviezdaPH_black.png',
 };
 loadImages(sources, initStage);

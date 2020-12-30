@@ -6,7 +6,10 @@ counterTemplate.innerHTML = `
                     <div class="card-body" >
                         <h6 class="title">Počítadlo prístupov</h6>
                         <hr class="custom-hr">
-                        <span class="float-left badge badge-light round">132</span>
+                        <span>Počet tvojich návštev:  
+                            <div class="badge badge-light round" id="CounterVisitor">
+                            </div>
+                        </span>
                     </div> <!-- card-body.// -->
                 </div>
             </article> <!-- card-group-item.// -->
@@ -36,69 +39,18 @@ class CounterWidget extends HTMLElement {
     }
 
     connectedCallback() {
-        /*
-        window.addEventListener("load", showCounter(), false);
+        var counter = localStorage.getItem('on_load_counter');
 
-        function showCounter() {
-            let visitCounter = getCookie("counter");
-            if (visitCounter === "") {
-                visitCounter = 0;
-            }
-            visitCounter++;
-            writeCountToPage("visit-counter", visitCounter);
-            setCookie("counter", visitCounter, 10);
+        if (counter === null) {
+            counter = 0;
         }
 
-        function writeCountToPage(outputElement, count) {
-            document.getElementById(outputElement).innerHTML = count;
-        }
+        counter++;
 
-        function setCookie(name, value, expirationDays) {
-            let expirationDate = getExpirationDate(expirationDays);
-            let expires = formCookieExpiration(expirationDate);
-            saveCookie(name, value, expires);
-        }
+        localStorage.setItem("on_load_counter", counter);
 
-        function getExpirationDate(expirationDays) {
-            let expirationDate = new Date();
-            expirationDate.setTime(expirationDate.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
-            return expirationDate;
-        }
+        this.shadowRoot.getElementById('CounterVisitor').innerHTML = counter;
 
-        function formCookieExpiration(expirationDate) {
-            return "expires=" + expirationDate.toUTCString();
-        }
-
-        function saveCookie(name, value, expirationDate) {
-            document.cookie = formCookieEntry(name, value, expirationDate);
-        }
-
-        function formCookieEntry(name, value, expires) {
-            return name + "=" + value + ";" + expires + ";path=/";
-        }
-
-        function getCookie(name) {
-            let searchedName = name + "=";
-            let splittedCookies = getDecodedCookies().splitCookies();
-            for (currentCookie of splittedCookies) {
-                while (currentCookie.charAt(0) == ' ') {
-                    currentCookie = currentCookie.substring(1);
-                }
-                if (currentCookie.indexOf(searchedName) == 0) {
-                    return currentCookie.substring(searchedName.length, currentCookie.length);
-                }
-            }
-            return "";
-        }
-
-        function getDecodedCookies() {
-            this.value = decodeURIComponent(document.cookie);
-            return this;
-        }
-
-        function splitCookies() {
-            return this.value.split(";");
-        }*/
     }
 }
 window.customElements.define("counter-widget", CounterWidget);

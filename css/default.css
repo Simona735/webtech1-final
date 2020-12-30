@@ -45,6 +45,10 @@ body{
     background: #a2202f;
 }
 
+#container > div{
+    margin: auto;
+}
+
 .img-circle{
     margin: 0 auto;
     display: block;

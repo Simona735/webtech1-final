@@ -1,60 +1,63 @@
-[
-  {
-    "href":"#",
-    "text":"Hry",
-    "children":[
-      {
-        "href":"/subpages/games/anjel.html",
-        "text":"Anjel"
-      },
-      {
-        "href":"/subpages/games/tucniak.html",
-        "text":"Tučniak"
-      },
-      {
-        "href":"/subpages/games/mikulas.com",
-        "text":"Mikuláš"
-      },
-      {
-        "href":"/subpages/games/olaf.com",
-        "text":"Snehuliak Olaf"
-      }
-    ]
-  },
-  {
-    "href":"#",
-    "text":"Info",
-    "children":[
-      {
-        "href":"/subpages/sources",
-        "text":"Zdroje"
-      },
-      {
-        "href":"#",
-        "text":"O nás",
-        "children":[
-          {
-            "href":"../../subpages/about/rendek.html",
-            "text":"Rendek Michal"
-          },
-          {
-            "href":"/subpages/about/richterova.html",
-            "text":"Richterová Simona"
-          },
-          {
-            "href":"/subpages/about/ulrichova.html",
-            "text":"Ulrichová Barbora"
-          },
-          {
-            "href":"/subpages/about/vcelkova.html",
-            "text":"Včelková Edita"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "href":"/subpages/tasks.html",
-    "text":"Zoznam úloh"
-  }
-]
+{
+  "menuItems":
+  [
+    {
+      "href":"#",
+      "text":"Hry",
+      "children":[
+        {
+          "href":"/subpages/games/anjel.html",
+          "text":"Anjel"
+        },
+        {
+          "href":"/subpages/games/tucniak.html",
+          "text":"Tučniak"
+        },
+        {
+          "href":"/subpages/games/mikulas.com",
+          "text":"Mikuláš"
+        },
+        {
+          "href":"/subpages/games/olaf.com",
+          "text":"Snehuliak Olaf"
+        }
+      ]
+    },
+    {
+      "href":"#",
+      "text":"Info",
+      "children":[
+        {
+          "href":"/subpages/sources",
+          "text":"Zdroje"
+        },
+        {
+          "href":"#",
+          "text":"O nás",
+          "children":[
+            {
+              "href":"/subpages/about/rendek.html",
+              "text":"Rendek Michal"
+            },
+            {
+              "href":"/subpages/about/richterova.html",
+              "text":"Richterová Simona"
+            },
+            {
+              "href":"/subpages/about/ulrichova.html",
+              "text":"Ulrichová Barbora"
+            },
+            {
+              "href":"/subpages/about/vcelkova.html",
+              "text":"Včelková Edita"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "href":"/subpages/redistribution.html",
+      "text":"Zoznam a rozdelenie úloh"
+    }
+  ]
+}

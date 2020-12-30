@@ -58,7 +58,7 @@ class NamesdayWidget extends HTMLElement {
         this.shadowRoot.appendChild(namedayTemplate.content.cloneNode(true));
     }
 
-    connectedCallback() {
+    connectedCallback() {/*
         var namesdayList;
         var helperBox;
         var isDate;
@@ -312,7 +312,7 @@ class NamesdayWidget extends HTMLElement {
                 return value;
             }
 
-        }
+        }*/
     }
 }
 window.customElements.define("namesday-widget", NamesdayWidget);

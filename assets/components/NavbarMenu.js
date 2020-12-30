@@ -10,33 +10,7 @@ navbarTemplate.innerHTML = `
             </button>
         
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuGames" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hry </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuGames">
-                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/anjel.html">Anjel</a></li>
-                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/tucniak.html">Tučniak</a></li>
-                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/mikulas.html">Mikuláš</a></li>
-                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/games/olaf.html">Snehuliak Olaf</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Info </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/sources.html">Zdroje</a></li>
-                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">O nás</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/about/rendek.html">Rendek Michal</a></li>
-                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/about/richterova.html">Richterová Simona</a></li>
-                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal/subpages/about/ulrichova.html">Ulrichová Barbora</a></li>
-                                    <li><a class="dropdown-item" href="/~xrichterova/Zfinal//subpages/about/vcelkova.html">Včelková Edita</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/~xrichterova/Zfinal/subpages/redistribution.html">Rozdelenie úloh</a>
-                    </li>
+                <ul class="navbar-nav mr-auto" id="menuContent">
                 </ul>
             </div>
         </nav>
@@ -57,8 +31,8 @@ navbarTemplate.innerHTML = `
                 position:relative;
             }
             
-            .dropdown-menu {
-                margin: 0; !important;
+            li .dropdown-menu{
+                margin: 0;
             }
             
             .dropdown-submenu>.dropdown-menu {
@@ -85,7 +59,71 @@ class NavbarMenu extends HTMLElement {
     }
 
     connectedCallback() {
+        var menu = this.shadowRoot.getElementById("menuContent");
+        let rootPath = "/~xrichterova/Zfinal";
 
+        fetch('/~xrichterova/Zfinal/data/menu.json')
+            .then(response => response.json())
+            .then(json => {
+                json.menuItems.forEach((item) => {
+                    //1-level submenu
+                    let menuItem = document.createElement("li");
+                    menuItem.classList.add("nav-item");
+                    let menuItemLink = document.createElement("a");
+                    menuItemLink.classList.add("nav-link");
+                    menuItemLink.innerHTML = item.text;
+
+                    if ("children" in item) {
+                        //2-level submenu
+
+                        menuItem.classList.add("dropdown");
+                        menuItemLink.classList.add("dropdown-toggle");
+                        menuItemLink.setAttribute("href", "#");
+                        menuItemLink.setAttribute("data-toggle", "dropdown");
+                        menuItemLink.setAttribute("aria-haspopup", "true");
+                        menuItemLink.setAttribute("aria-expanded", "false");
+
+                        let submenu = document.createElement("ul");
+                        submenu.classList.add("dropdown-menu");
+                        item.children.forEach((subItem) => {
+                            let submenuItem = document.createElement("li");
+                            let submenuItemLink = document.createElement("a");
+                            submenuItemLink.classList.add("dropdown-item");
+                            submenuItemLink.innerHTML = subItem.text;
+                            if ("children" in subItem){
+                                //3-level submenu
+
+                                submenuItem.classList.add("dropdown-submenu");
+                                submenuItemLink.classList.add("dropdown-toggle");
+                                submenuItemLink.setAttribute("href", "#");
+                                submenuItem.appendChild(submenuItemLink);
+                                let subsubmenu = document.createElement("ul");
+                                subsubmenu.classList.add("dropdown-menu");
+                                subItem.children.forEach((subsubItem) => {
+                                    let subsubMenuItem = document.createElement("li");
+                                    let subsubMenuItemLink = document.createElement("a");
+                                    subsubMenuItemLink.classList.add("dropdown-item");
+                                    subsubMenuItemLink.setAttribute("href", rootPath + subsubItem.href );
+                                    subsubMenuItemLink.innerHTML = subsubItem.text;
+                                    subsubMenuItem.appendChild(subsubMenuItemLink);
+                                    subsubmenu.appendChild(subsubMenuItem);
+                                });
+                                submenuItem.appendChild(subsubmenu);
+                            } else {
+                                submenuItemLink.setAttribute("href", rootPath + subItem.href);
+                                submenuItem.appendChild(submenuItemLink);
+                            }
+                            submenu.appendChild(submenuItem);
+                        });
+                        menuItem.appendChild(menuItemLink);
+                        menuItem.appendChild(submenu);
+                    } else {
+                        menuItemLink.setAttribute("href", rootPath + item.href);
+                        menuItem.appendChild(menuItemLink);
+                    }
+                    menu.appendChild(menuItem);
+                });
+            });
     }
 }
 window.customElements.define("navbar-menu", NavbarMenu);

@@ -36,6 +36,7 @@ class CounterWidget extends HTMLElement {
     }
 
     connectedCallback() {
+        /*
         window.addEventListener("load", showCounter(), false);
 
         function showCounter() {
@@ -97,7 +98,7 @@ class CounterWidget extends HTMLElement {
 
         function splitCookies() {
             return this.value.split(";");
-        }
+        }*/
     }
 }
 window.customElements.define("counter-widget", CounterWidget);

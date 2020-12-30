@@ -162,7 +162,7 @@ function initStage(images) {
                     partsLayer.draw();
                     part.inRightPlace = true;
 
-                    if (++score >= 9) {
+                    if (++score >= 10) {
                         var text = 'You win! You win!';
                         drawBackground(background, images.pozadie, text);
                     }

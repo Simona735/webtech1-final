@@ -58,10 +58,14 @@ namedayTemplate.innerHTML = `
                 color: white;
             }
         </style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css
+" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js
+"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js
+" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js
+" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>        
         `;
 
 class NamesdayWidget extends HTMLElement {
@@ -72,14 +76,13 @@ class NamesdayWidget extends HTMLElement {
     }
 
     connectedCallback() {
+        let component = this;
+
         //dictionary formated key[day] - value[names]
         var dict1 = {};
 
         //dictionary formated key[name] - value[day], each key consist from one name, so if one day have multiple ones, they appear as independent keys
         var dict2 = {};
-
-        //basic tooltip setup
-        $('[data-toggle="tooltip"]').tooltip();
 
         //onload function just to get data from json
 
@@ -123,8 +126,9 @@ class NamesdayWidget extends HTMLElement {
                 name = dict1[q];
             }
             //find name for current date 'q'
+            //
 
-            this.shadowRoot.querySelector('#actual').innerText = today + "  " + name;
+            component.shadowRoot.getElementById('actual').innerText = today + "  " + name;
         }
 
         //main fn to get name or date
@@ -134,11 +138,12 @@ class NamesdayWidget extends HTMLElement {
             var input = this.shadowRoot.getElementById("input").value;
 
             try {
+
                 //if input contains number, we presume that we are going to translate date to name
                 if (hasNumber(input)) {
                     var date = input.split(".");
                     //checker for correct date input DD.MM, if input is correct, date.length have to be 2, othervise it means that they used wrong separator or no one
-                    if (date.length != 2) {
+                    if (date.length != 3 || date[2] !="") {
                         throw 'Error1';
                     }
                     //filling day and month numbers if it consist from one digit with zerro (form 3.12 --> 03.12)
@@ -154,21 +159,22 @@ class NamesdayWidget extends HTMLElement {
                     if (dict1[q] === undefined) {
                         throw 'Error2';
                     }
+
                     //if we got here it means we have correct answer so just put it into output
                     this.shadowRoot.getElementById("output").innerHTML = dict1[q];
                 }
                 //input doenst contain number so we presume that we are going to translate name to date
                 else {
                     input = normalizeString(input);
+
                     //simple for each loop to compare input with our dict2
                     Object.keys(dict2).forEach(function(key) {
                         var name = normalizeString(key);
                         //found it
                         if (name === input) {
-                            this.shadowRoot.getElementById("output").innerHTML = dict2[key].substring(2, 4) + "." + dict2[key].substring(0, 2);
                             //change checker to true so we know we found it
                             checker = true;
-
+                            component.shadowRoot.getElementById("output").innerHTML = (dict2[key].substring(2, 4) + "." + dict2[key].substring(0, 2));
                         }
 
 
@@ -178,18 +184,20 @@ class NamesdayWidget extends HTMLElement {
                 }
             } catch (e) {
                 if (e === 'Error1') {
-                    $('[data-toggle="tooltip"]').tooltip({ title: "Chybne zadaný formát dátumu DD.MM" });
-                    $('[data-toggle="tooltip"]').tooltip('show');
+                    $(this.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip({ title: "Chybne zadaný formát dátumu DD.MM." });
+                    $(this.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip('show');
                 } else if (e === 'Error2') {
-                    $('[data-toggle="tooltip"]').tooltip({ title: "Zadany dátum je chybný, máte správne poradie DD.MM?" });
-                    $('[data-toggle="tooltip"]').tooltip('show');
+                    $(this.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip({ title: "Zadany dátum je chybný, máte správne poradie DD.MM? " });
+                        $(this.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip('show');
                 } else if (e === 'Error3') {
-                    $('[data-toggle="tooltip"]').tooltip({ title: "Chybne zadané meno" });
-                    $('[data-toggle="tooltip"]').tooltip('show');
+                        $(this.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip({ title: "Chybne zadané meno" });
+                        $(this.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip('show');
+                    }
+                    setTimeout(function() {
+                        $(component.shadowRoot.querySelector('[data-toggle="tooltip"]')).tooltip('dispose');
+                    }, 2500);
                 }
-
-            }
-        });
+            });
 
         //fn to get rid of Upper-cases and no standard characters such as á,š etc...
         function normalizeString(string) {
@@ -203,15 +211,6 @@ class NamesdayWidget extends HTMLElement {
         function hasNumber(myString) {
             return /\d/.test(myString);
         }
-
-        //auto hide tooltip after 2500ms
-        $(function() {
-            $(this.shadowRoot).on('shown.bs.tooltip', function(e) {
-                setTimeout(function() {
-                    $(e.target).tooltip('dispose');
-                }, 2500);
-            });
-        });
     }
 }
 window.customElements.define("namesday-widget", NamesdayWidget);

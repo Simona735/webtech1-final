@@ -8,9 +8,6 @@ $(document).ready(function () {
         breadscrums = JSON.parse($.cookie('breadscrums'));
     }
 
-    if (breadscrums.length >= 5)
-        breadscrums.shift();
-
     let menuPath = window.location.pathname.split('/~xrichterova/Zfinal')[1];
     let menuArray;
 
@@ -18,7 +15,15 @@ $(document).ready(function () {
         menuArray = json;
     }).done(function(){
         traverseJSON(menuArray, currentUrl);
-        breadscrums.push([breadscrumName === undefined ? "Domov" : breadscrumName, currentUrl])
+        if (breadscrums.length != 0){
+            if (currentUrl != breadscrums[breadscrums.length-1][1]){
+                if (breadscrums.length >= 5)
+                    breadscrums.shift();
+                breadscrums.push([breadscrumName === undefined ? "Domov" : breadscrumName, currentUrl])
+            }
+        }
+        else
+            breadscrums.push([breadscrumName === undefined ? "Domov" : breadscrumName, currentUrl])
 
         //console.log(breadscrums);
         $.cookie('breadscrums', JSON.stringify(breadscrums), {path: '/'});

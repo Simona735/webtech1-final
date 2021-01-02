@@ -3,13 +3,13 @@
 Link na [stránku](http://147.175.121.202/~xrichterova/Zfinal/)
 
 ## Domovská stránka
-![](https://scontent.fbts7-1.fna.fbcdn.net/v/t1.15752-9/134461483_317486426157391_7628437442717139514_n.png?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=Apl7wAYe1h8AX9Tua64&_nc_ht=scontent.fbts7-1.fna&oh=8c371b51ba512d7683bbb58608304112&oe=6011C296)
+![](https://scontent.fbts7-1.fna.fbcdn.net/v/t1.15752-9/134922185_379843539981137_8113028414350454053_n.png?_nc_cat=107&ccb=2&_nc_sid=ae9488&_nc_ohc=fcITIm9GPqUAX9jFGTp&_nc_ht=scontent.fbts7-1.fna&oh=0d56f46198fe88a4f755563f4fc2248c&oe=6014C4C3)
 
 ## Zoznam úloh /ukážka podstránky
-![](https://scontent.fbts7-1.fna.fbcdn.net/v/t1.15752-9/134061117_219606566416279_482853382940245012_n.png?_nc_cat=103&ccb=2&_nc_sid=ae9488&_nc_ohc=5cdhYT8z5HgAX_fK0Bg&_nc_oc=AQkYhzlBrjI-t7MO2w01PhU74FFHD4W4mlDWP1eVxxGQLOp-QpXyT7c2fBnDCVHTNgA&_nc_ht=scontent.fbts7-1.fna&oh=a5e0318d90f5c514a8b1e44c3997e872&oe=601277B1)
+![](https://scontent.fbts7-1.fna.fbcdn.net/v/t1.15752-9/134818755_455300649189393_6145031465129932816_n.png?_nc_cat=110&ccb=2&_nc_sid=ae9488&_nc_ohc=9eto40Oytd4AX_sHD10&_nc_ht=scontent.fbts7-1.fna&oh=86c544066c886eb7c8cafc4e263b6235&oe=6016D7BA)
 
 ## Ukážka hry
-![](https://scontent.fbts7-1.fna.fbcdn.net/v/t1.15752-9/134480392_1100306090416791_4242261179440612636_n.png?_nc_cat=107&ccb=2&_nc_sid=ae9488&_nc_ohc=992kDYkqQoAAX-ANk6L&_nc_ht=scontent.fbts7-1.fna&oh=bfcbcc9927bcfc22202548901963c07a&oe=601037A5)
+![](https://scontent.fbts7-1.fna.fbcdn.net/v/t1.15752-9/135460184_311397413539531_7418381645636290596_n.png?_nc_cat=109&ccb=2&_nc_sid=ae9488&_nc_ohc=EuMTOJy_ZBcAX8JTDQn&_nc_ht=scontent.fbts7-1.fna&oh=649dba9e1adf2189037a20db458493d9&oe=6016955E)
 
 
 

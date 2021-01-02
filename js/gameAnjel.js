@@ -1,5 +1,6 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
+var container_scale = 1;
 
 function loadImages(sources, callback) {
     var assetDir = '/~xrichterova/Zfinal/assets/anjel/';
@@ -33,7 +34,7 @@ function isNearOutline(part, outline) {
 }
 function drawBackground(background, backgroundIMG, text) {
     var context = background.getContext();
-    context.drawImage(backgroundIMG, 0, 0);
+    context.drawImage(backgroundIMG, 0, 0, background.getStage().width(), background.getStage().height());
     context.setAttr('font', '20pt Calibri');
     context.setAttr('textAlign', 'left');
     context.setAttr('fillStyle', 'black');
@@ -43,10 +44,16 @@ function drawBackground(background, backgroundIMG, text) {
 function initStage(images) {
     let start_time;
 
+    let container_canva = $('#container');
+    container_canva.empty();
+
+    if (container_canva.width() < 600)
+        container_scale = container_canva.width() / 600;
+
     var stage = new Konva.Stage({
         container: 'container',
-        width: 600,
-        height: 450,
+        width: 600 * container_scale,
+        height: 450 * container_scale,
     });
     var background = new Konva.Layer();
     var partsLayer = new Konva.Layer();
@@ -97,6 +104,11 @@ function initStage(images) {
         },
     };
 
+    $.each(parts, function(key, value) {
+        value.x =  value.x * container_scale;
+        value.y =  value.y * container_scale;
+    });
+
     var outlines = {
         hviezdaL_black: {
             x: 36,
@@ -140,6 +152,11 @@ function initStage(images) {
         },
     };
 
+    $.each(outlines, function(key, value) {
+        value.x =  value.x * container_scale;
+        value.y =  value.y * container_scale;
+    });
+
     // create draggable parts
     for (var key in parts) {
         // anonymous function to induce scope
@@ -152,6 +169,10 @@ function initStage(images) {
                 x: anim.x,
                 y: anim.y,
                 draggable: true,
+            });
+            part.setAttrs({
+                width: part.width() * container_scale,
+                height: part.height() * container_scale,
             });
 
             part.on('dragstart', function () {
@@ -215,6 +236,10 @@ function initStage(images) {
                 x: out.x,
                 y: out.y,
             });
+            outline.setAttrs({
+                width: outline.width() * container_scale,
+                height: outline.height() * container_scale,
+            });
 
             partsLayer.add(outline);
         })();
@@ -259,7 +284,6 @@ var sources = {
     hviezdaPH: 'hviezdaPH.png',
     hviezdaPH_black: 'hviezdaPH_black.png',
 };
-loadImages(sources, initStage);
 
 function generateDemo(images, parts, outlines) {
     let modal_demo = $('#modal_demo');
@@ -268,22 +292,31 @@ function generateDemo(images, parts, outlines) {
 
     modal_demo.empty().append('<img src="' + images.pozadie.src + '" width="' + modal_demo.width() + '" alt="demo">');
 
-    let scale = modal_demo.width() / 600;
+    let scale = Math.pow(container_scale, -1) * (modal_demo.width() / 600);
 
     let demo_parts = {};
     let demo_parts_index = 0;
     $.each(parts, function(key, value) {
         demo_parts[demo_parts_index] = $('<img id="' + demo_parts_index + '" src="' + images[key].src + '" alt="demo" class="demo_images_parts" style="top:'+ value.y * scale +'px; left:'+ value.x * scale +'px;">');
         modal_demo.append(demo_parts[demo_parts_index]);
-        $('#' + demo_parts_index).width($('#' + demo_parts_index).width() * scale);
+        $('#' + demo_parts_index).width($('#' + demo_parts_index).width() * modal_demo.width() / 600);
         demo_parts_index++;
     });
 
     demo_parts_index = 0;
     setTimeout(function(){
         $.each(outlines, function(key, value) {
+            console.log(value);
             $(demo_parts[demo_parts_index++]).animate({top: (value.y * scale + "px"), left: (value.x * scale + "px")}, 2000);
         });
 
     }, 1000);
 }
+
+$(document).ready(function() {
+    loadImages(sources, initStage);
+
+    $(window).resize(function() {
+        loadImages(sources, initStage);
+    });
+});

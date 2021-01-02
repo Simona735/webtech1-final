@@ -90,6 +90,18 @@ th{
     margin: 15px;
 }
 
+.demo {
+    margin-top: -15px;
+}
+
+.demo_images_parts {
+    position: absolute;
+}
+
+#modal_demo {
+    width: 100%;
+}
+
 .task-cell{
     width: 75%;
 }

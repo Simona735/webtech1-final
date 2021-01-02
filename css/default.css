@@ -12,6 +12,9 @@ body{
     border-radius: .25rem;
     margin: 0;
 }
+.breadcrumbs li a{
+    color: #365b24;
+}
 
 .bg-1 {
     padding: 20px 0;

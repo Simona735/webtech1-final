@@ -119,6 +119,25 @@ div .green-background, .btn-green{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+.button-green{
+    background-color: #365B24;
+    color: white;
+    border-color: #365B24;
+}
+
+.button-green:hover{
+    background-color: #17280F;
+    color: white;
+    border-color: #17280F;
+}
+
+.button-green:focus{
+    background-color: #17280F;
+    color: white;
+    border-color: #17280F;
+    box-shadow: 0 0 0 0.2rem rgb(23, 40, 15, .5);
+}
+
 .card{
     margin: 10px 20px;
 }

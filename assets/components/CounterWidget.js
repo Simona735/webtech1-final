@@ -7,7 +7,7 @@ counterTemplate.innerHTML = `
                         <h6 class="title">Počítadlo prístupov</h6>
                         <hr class="custom-hr">
                         <span>Počet tvojich návštev:  
-                            <div class="badge badge-light round" id="CounterVisitor">
+                            <div class="badge badge-light round" id="counterVisitor">
                             </div>
                         </span>
                     </div> <!-- card-body.// -->
@@ -15,6 +15,10 @@ counterTemplate.innerHTML = `
             </article> <!-- card-group-item.// -->
         </div> <!-- card.// -->
         <style>
+            #counterVisitor{
+                font-size: 17px;
+                margin-left: 10px;;
+            }
             #green-background{
                 background-color: #365B24;
                 color: white;
@@ -49,7 +53,7 @@ class CounterWidget extends HTMLElement {
 
         localStorage.setItem("on_load_counter", counter);
 
-        this.shadowRoot.getElementById('CounterVisitor').innerHTML = counter;
+        this.shadowRoot.getElementById('counterVisitor').innerHTML = counter;
 
     }
 }

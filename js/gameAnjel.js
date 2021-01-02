@@ -195,8 +195,9 @@ function initStage(images) {
 
                     if (++score >= 10) {
                         end_time = new Date(new Date() - start_time);
-                        var text = end_time.getHours() - 1  + ':' + end_time.getMinutes() + ':' + end_time.getSeconds();
-                        drawBackground(background, images.pozadie, text);
+                        var text = end_time.getHours() - 1  + ':' + end_time.getMinutes() + ':' + end_time.getSeconds() + '.' + end_time.getMilliseconds();
+                        $('#end_game').modal('show');
+                        $('#game_time').text(text);
                     }
 
                     // disable drag and drop

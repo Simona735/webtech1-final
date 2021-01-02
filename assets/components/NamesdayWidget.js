@@ -16,7 +16,7 @@ namedayTemplate.innerHTML = `
                                 <input type="text" id="input" data-toggle="tooltip" data-trigger="manual" data-placement="bottom">
                             </div>
                             <div>
-                                <button id="search-button" type="button" class="btn btn-primary">&#10003;</button>
+                                <button id="search-button" type="button" class="btn btn-light">&#10003;</button>
                             </div>
                             <div class="col-md-auto">
                                 <p id="output"></p>
@@ -59,14 +59,14 @@ namedayTemplate.innerHTML = `
             }
         </style>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>        
         `;
 
 class NamesdayWidget extends HTMLElement {
     constructor() {
         super();
-
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(namedayTemplate.content.cloneNode(true));
     }
@@ -123,6 +123,7 @@ class NamesdayWidget extends HTMLElement {
                 name = dict1[q];
             }
             //find name for current date 'q'
+
             this.shadowRoot.querySelector('#actual').innerText = today + "  " + name;
         }
 
@@ -190,7 +191,6 @@ class NamesdayWidget extends HTMLElement {
             }
         });
 
-
         //fn to get rid of Upper-cases and no standard characters such as á,š etc...
         function normalizeString(string) {
             var input = string.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -206,7 +206,7 @@ class NamesdayWidget extends HTMLElement {
 
         //auto hide tooltip after 2500ms
         $(function() {
-            $(document).on('shown.bs.tooltip', function(e) {
+            $(this.shadowRoot).on('shown.bs.tooltip', function(e) {
                 setTimeout(function() {
                     $(e.target).tooltip('dispose');
                 }, 2500);

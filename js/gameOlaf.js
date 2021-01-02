@@ -85,6 +85,10 @@ function initStage(images) {
             x: 385,
             y: 70,
         },
+        telo: {
+            x: 355,
+            y: 70,
+        },
     };
 
     var outlines = {
@@ -120,6 +124,10 @@ function initStage(images) {
             x: 175,
             y: 5,
         },
+        telo_black: {
+            x: 73,
+            y: 64,
+        },
     };
 
     // create draggable parts
@@ -154,8 +162,9 @@ function initStage(images) {
                     partsLayer.draw();
                     part.inRightPlace = true;
 
-                    if (++score >= 8) {
-                        var text = 'You win! You win!';
+                    if (++score >= 9) {
+                        end_time = new Date(new Date() - start_time);
+                        var text = end_time.getHours() - 1  + ':' + end_time.getMinutes() + ':' + end_time.getSeconds();
                         drawBackground(background, images.pozadie, text);
                     }
 
@@ -209,6 +218,12 @@ function initStage(images) {
         images.pozadie,
         ''
     );
+
+    $('#exampleModal').on('shown.bs.modal', function (e) {
+        generateDemo(images, parts, outlines);
+    })
+
+    start_time = new Date();
 }
 
 var sources = {
@@ -229,5 +244,34 @@ var sources = {
     usta_black: 'usta_black.png',
     vlasy: 'vlasy.png',
     vlasy_black: 'vlasy_black.png',
+    telo: 'telo.png',
+    telo_black: 'telo_black.png',
 };
 loadImages(sources, initStage);
+
+function generateDemo(images, parts, outlines) {
+    let modal_demo = $('#modal_demo');
+    if (modal_demo.width() > 600)
+        modal_demo.width(600);
+
+    modal_demo.empty().append('<img src="' + images.pozadie.src + '" width="' + modal_demo.width() + '" alt="demo">');
+
+    let scale = modal_demo.width() / 600;
+
+    let demo_parts = {};
+    let demo_parts_index = 0;
+    $.each(parts, function(key, value) {
+        demo_parts[demo_parts_index] = $('<img id="' + demo_parts_index + '" src="' + images[key].src + '" alt="demo" class="demo_images_parts" style="top:'+ value.y * scale +'px; left:'+ value.x * scale +'px;">');
+        modal_demo.append(demo_parts[demo_parts_index]);
+        $('#' + demo_parts_index).width($('#' + demo_parts_index).width() * scale);
+        demo_parts_index++;
+    });
+
+    demo_parts_index = 0;
+    setTimeout(function(){
+        $.each(outlines, function(key, value) {
+            $(demo_parts[demo_parts_index++]).animate({top: (value.y * scale + "px"), left: (value.x * scale + "px")}, 2000);
+        });
+
+    }, 1000);
+}

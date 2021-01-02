@@ -20,7 +20,7 @@ $(document).ready(function () {
         traverseJSON(menuArray, currentUrl);
         breadscrums.push([breadscrumName === undefined ? "Domov" : breadscrumName, currentUrl])
 
-        console.log(breadscrums);
+        //console.log(breadscrums);
         $.cookie('breadscrums', JSON.stringify(breadscrums), {path: '/'});
 
         let navBreadcrumbs = $('nav ol.breadcrumbs');
@@ -35,10 +35,10 @@ $(document).ready(function () {
 
 function traverseJSON(json, currentUrl) {
     $.each(json, function(key, value) {
-        console.log(window.location.protocol + '//' + window.location.host + '/~xrichterova/Zfinal' + value.href);
-        console.log(currentUrl);
+        //console.log(window.location.protocol + '//' + window.location.host + '/~xrichterova/Zfinal' + value.href);
+        //console.log(currentUrl);
         if (window.location.protocol + '//' + window.location.host + '/~xrichterova/Zfinal' + value.href == currentUrl) {
-            console.log(value.text);
+            //console.log(value.text);
             breadscrumName = value.text;
         } else {
             traverseJSON(value.children, currentUrl);

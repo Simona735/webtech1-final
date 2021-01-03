@@ -3,7 +3,7 @@ namedayTemplate.innerHTML = `
         <div class="card" id="meninyBody">
             <article class="card-group-item">
                 <div class="filter-content" id="green-background">
-                    <form class="card-body" >
+                    <div class="card-body" >
                         <h6 class="title">Meniny</h6>
                         <hr class="custom-hr">
                         <div class="mb-3" id="actual"></div>

@@ -6,10 +6,10 @@ counterTemplate.innerHTML = `
                     <div class="card-body" >
                         <h6 class="title">Počítadlo prístupov</h6>
                         <hr class="custom-hr">
-                        <span>Počet tvojich návštev:  
+                        <div>Počet tvojich návštev:  
                             <div class="badge badge-light round" id="counterVisitor">
                             </div>
-                        </span>
+                        </div>
                     </div> <!-- card-body.// -->
                 </div>
             </article> <!-- card-group-item.// -->

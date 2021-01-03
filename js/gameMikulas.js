@@ -1,6 +1,8 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
 var container_scale = 1;
+let start_time;
+let stop_time = false;
 
 function loadImages(sources, callback) {
     var assetDir = '/~xrichterova/Zfinal/assets/mikulas/';
@@ -42,7 +44,6 @@ function drawBackground(background, backgroundIMG, text) {
 }
 
 function initStage(images) {
-    let start_time;
 
     let container_canva = $('#container');
     container_canva.empty();
@@ -176,6 +177,14 @@ function initStage(images) {
              * snap into place if it is
              */
             part.on('dragend', function () {
+                if (part._lastPos.x < -10 || part._lastPos.x > background.getStage().width()-40 || part._lastPos.y < -10 || part._lastPos.y > background.getStage().height() -40) {
+                    console.log(privKey);
+                    part.setAttrs({
+                        x: parts[privKey].x,
+                        y: parts[privKey].y,
+                    });
+                }
+
                 var outline = outlines[privKey + '_black'];
                 if (!part.inRightPlace && isNearOutline(part, outline)) {
                     part.position({
@@ -186,10 +195,12 @@ function initStage(images) {
                     part.inRightPlace = true;
 
                     if (++score >= 9) {
+                        stop_time = true;
                         end_time = new Date(new Date() - start_time);
                         var text = end_time.getHours() - 1  + ':' + end_time.getMinutes() + ':' + end_time.getSeconds() + '.' + end_time.getMilliseconds();
                         $('#end_game').modal('show');
                         $('#game_time').text(text);
+                        $('#time_game').text('Tvoj čas hry (h:m:s.milisekundy): ' + text);
                     }
 
                     // disable drag and drop
@@ -310,4 +321,16 @@ $(document).ready(function() {
     $(window).resize(function() {
         loadImages(sources, initStage);
     });
+    time_cutdown();
 });
+
+function time_cutdown() {
+    setTimeout(function () {
+        end_time = new Date(new Date() - start_time);
+        console.log(start_time);
+        var text = end_time.getHours() - 1  + ':' + end_time.getMinutes() + ':' + end_time.getSeconds();
+        $('#time_game').text('Tvoj čas hry (h:m:s): ' + text);
+        if(!stop_time)
+            time_cutdown();
+    }, 1000);
+}

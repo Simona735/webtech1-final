@@ -138,11 +138,15 @@ div .green-background, .btn-green{
     background-color: #17280F;
     color: white;
     border-color: #17280F;
-    box-shadow: 0 0 0 0.2rem rgb(23, 40, 15, .5);
+    box-shadow: 0 0 0 0.2rem rgba(23, 40, 15, .5);
 }
 
 .card{
     margin: 10px 20px;
+}
+
+.mb-footer{
+    margin-bottom: 5rem;
 }
 
 footer{

@@ -80,8 +80,11 @@ table, td {
     color: #ffffff;
     border: 2px solid #cababa;
     padding: 5px;
-    /*margin: 15px;*/
+
     background-color: #365b24;
+}
+td{
+    margin: 15px;
 }
 table{
     width: 100%;
@@ -89,8 +92,25 @@ table{
 th{
     border: 2px solid #cababa;
     background-color: #750310;
-    padding: 5px;
-    margin: 15px;
+
+    margin: 0 1em;
+}
+th p{
+    margin-inline-start: 0.5em;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.tc3 tr td:nth-child(3), .tc4 tr td:nth-child(4),
+.tc5 tr td:nth-child(5), .tc6 tr td:nth-child(6) {
+    text-align:center;
+}
+
+.tc3 tr th:nth-child(3) p, .tc4 tr th:nth-child(4) p,
+.tc5 tr th:nth-child(5) p, .tc6 tr th:nth-child(6) p{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
 }
 
 .demo {
@@ -106,7 +126,9 @@ th{
 }
 
 .task-cell{
-    width: 75%;
+    max-width: 75%;
+    text-align:center;
+    font-size: 1.5em;
 }
 .game-preview{
     max-height: 200px;

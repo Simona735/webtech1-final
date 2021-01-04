@@ -7,9 +7,9 @@ namedayTemplate.innerHTML = `
                         <h6 class="title">Meniny</h6>
                         <hr class="custom-hr">
                         <div class="mb-3" id="actual"></div>
-                        <form class="form-inline">
-                            <input class="form-control mb-2 mr-sm-2" type="text" placeholder="Hľadaj" id="input" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" aria-label="Hľadaj">
-                            <button id="search-button" type="button" class="btn btn-light my-sm-0 mb-2 mr-sm-2">Hľadaj</button>
+                        <form>
+                            <input class="form-control mb-2 mr-sm-2" type="text" placeholder="Zadaj meno alebo dátum" id="input" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" aria-label="Hľadaj">
+                            <button id="search-button" type="button" class="btn btn-light mb-2 mr-sm-2">Hľadaj</button>
                             <span class="mb-2" id="output"></span>
                         </form>
                     </div> <!-- card-body.// -->
